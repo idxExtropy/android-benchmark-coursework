@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">UML Android Benchmark</string>
+	
+	<string name="splash">UML Android Benchmark \n\nBuild Date: 01-April-2011 \nCourse: 16.650 \n\nRun benchmark suite now?</string>
+	
+	<string name="cpu_title">CPU</string>
+	<string name="mem_title">MEM</string>
+	<string name="io_title">IO</string>
+	<string name="graphics_title">GRAPHICS</string>
+	
+	<string name="cpu">CPU: N/A</string>
+	<string name="mem">MEM: N/A</string>
+	<string name="io">IO: N/A</string>
+	<string name="graphics">Graphics: N/A</string>
+</resources>
