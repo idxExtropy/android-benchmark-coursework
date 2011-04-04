@@ -5,73 +5,106 @@
     android:layout_height="fill_parent">
 
   <LinearLayout
-      android:orientation="horizontal"
-      android:layout_width="fill_parent"
-      android:layout_height="fill_parent"
-      android:layout_weight="1">
-      <TextView
-          android:text="@string/cpu_title"
-          android:gravity="center_horizontal"
-          android:background="#aa0000"
-          android:layout_width="fill_parent"
-          android:layout_height="fill_parent"
-          android:layout_weight="1"/>
-      <TextView
-          android:text="@string/mem_title"
-          android:gravity="center_horizontal"
-          android:background="#00aa00"
-          android:layout_width="fill_parent"
-          android:layout_height="fill_parent"
-          android:layout_weight="1"/>
-      <TextView
-          android:text="@string/io_title"
-          android:gravity="center_horizontal"
-          android:background="#0000aa"
-          android:layout_width="fill_parent"
-          android:layout_height="fill_parent"
-          android:layout_weight="1"/>
-      <TextView
-          android:text="@string/graphics_title"
-          android:gravity="center_horizontal"
-          android:background="#ff4500"
-          android:layout_width="fill_parent"
-          android:layout_height="fill_parent"
-          android:layout_weight="1"/>
-  </LinearLayout>
-        
-  <LinearLayout
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:layout_weight="1">
-    <TextView
-    	android:id="@+id/cpu_string"
-        android:text="@string/cpu"
-        android:textSize="12pt"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"/>
-    <TextView
-    	android:id="@+id/mem_string"
-        android:text="@string/mem"
-        android:textSize="12pt"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"/>
-    <TextView
-    	android:id="@+id/io_string"
-        android:text="@string/io"
-        android:textSize="12pt"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"/>
-    <TextView
-    	android:id="@+id/graphics_string"
-        android:text="@string/graphics"
-        android:textSize="12pt"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"/>
+    
+	<TextView android:id="@+id/cpu_string" android:layout_height="wrap_content"
+        android:layout_width="wrap_content" android:gravity="center_vertical"
+        android:textStyle="bold" android:text="@string/cpu"
+        android:layout_marginLeft="10px" android:textSize="18px"
+        android:textColor="#808080" />
+    <TextView android:id="@+id/cpu_math" android:layout_height="wrap_content"
+        android:layout_width="wrap_content" android:gravity="center_vertical"
+        android:textStyle="bold" android:text="Math"
+        android:layout_marginLeft="20px" android:textSize="14px"
+        android:textColor="#808080" />
+    <TextView android:id="@+id/cpu_compression" android:layout_height="wrap_content"
+        android:layout_width="wrap_content" android:gravity="center_vertical"
+        android:textStyle="bold" android:text="Compression"
+        android:layout_marginLeft="20px" android:textSize="14px"
+        android:textColor="#808080" />
+    <TextView android:id="@+id/cpu_decoding" android:layout_height="wrap_content"
+        android:layout_width="wrap_content" android:gravity="center_vertical"
+        android:textStyle="bold" android:text="Decoding"
+        android:layout_marginLeft="20px" android:textSize="14px"
+        android:textColor="#808080" />
+    <ProgressBar android:id="@+id/cpu_progress"
+        android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:layout_marginTop="10px" android:layout_marginBottom="15px" 
+        android:layout_marginLeft="10px" android:layout_marginRight="10px"
+        style="?android:attr/progressBarStyleHorizontal" />
+    <View
+        android:layout_width="fill_parent" android:layout_height="2dip"
+        android:layout_marginBottom="5px" android:background="#FFFFFF" />       
+           
+    <TextView android:id="@+id/mem_string" android:layout_height="wrap_content"
+        android:layout_width="wrap_content" android:gravity="center_vertical"
+        android:textStyle="bold" android:text="@string/mem"
+        android:layout_marginLeft="10px" android:textSize="18px"
+        android:textColor="#808080" />
+    <TextView android:id="@+id/mem_read" android:layout_height="wrap_content"
+        android:layout_width="wrap_content" android:gravity="center_vertical"
+        android:textStyle="bold" android:text="Reads"
+        android:layout_marginLeft="20px" android:textSize="14px"
+        android:textColor="#808080" />
+    <TextView android:id="@+id/mem_write" android:layout_height="wrap_content"
+        android:layout_width="wrap_content" android:gravity="center_vertical"
+        android:textStyle="bold" android:text="Writes"
+        android:layout_marginLeft="20px" android:textSize="14px"
+        android:textColor="#808080" />
+    <ProgressBar android:id="@+id/mem_progress"
+        android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:layout_marginTop="10px" android:layout_marginBottom="15px" 
+        android:layout_marginLeft="10px" android:layout_marginRight="10px"
+        style="?android:attr/progressBarStyleHorizontal" />
+    <View
+        android:layout_width="fill_parent" android:layout_height="2dip"
+        android:layout_marginBottom="5px" android:background="#FFFFFF" />  
+    
+    <TextView android:id="@+id/io_string" android:layout_height="wrap_content"
+        android:layout_width="wrap_content" android:gravity="center_vertical"
+        android:textStyle="bold" android:text="@string/io"
+        android:layout_marginLeft="10px" android:textSize="18px"
+        android:textColor="#808080" />
+    <TextView android:id="@+id/io_write" android:layout_height="wrap_content"
+        android:layout_width="wrap_content" android:gravity="center_vertical"
+        android:textStyle="bold" android:text="Database Writes"
+        android:layout_marginLeft="20px" android:textSize="14px"
+        android:textColor="#808080" />
+    <TextView android:id="@+id/io_Reads" android:layout_height="wrap_content"
+        android:layout_width="wrap_content" android:gravity="center_vertical"
+        android:textStyle="bold" android:text="Database Reads"
+        android:layout_marginLeft="20px" android:textSize="14px"
+        android:textColor="#808080" />
+    <ProgressBar android:id="@+id/io_progress"
+        android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:layout_marginTop="10px" android:layout_marginBottom="15px" 
+        android:layout_marginLeft="10px" android:layout_marginRight="10px"
+        style="?android:attr/progressBarStyleHorizontal" />
+    <View
+        android:layout_width="fill_parent" android:layout_height="2dip"
+        android:layout_marginBottom="5px" android:background="#FFFFFF" />  
+    
+    <TextView android:id="@+id/graphics_string" android:layout_height="wrap_content"
+        android:layout_width="wrap_content" android:gravity="center_vertical"
+        android:textStyle="bold" android:text="@string/graphics"
+        android:layout_marginLeft="10px" android:textSize="18px"
+        android:textColor="#808080" />
+    <ProgressBar android:id="@+id/graphics_progress"
+        android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:layout_marginTop="10px" android:layout_marginBottom="15px" 
+        android:layout_marginLeft="10px" android:layout_marginRight="10px"
+        style="?android:attr/progressBarStyleHorizontal" />
+    <View
+        android:layout_width="fill_parent" android:layout_height="2dip"
+        android:layout_marginBottom="5px" android:background="#FFFFFF" /> 
+        
+    <TextView android:id="@+id/io_string" android:layout_height="wrap_content"
+        android:layout_width="fill_parent" android:gravity="center"
+        android:layout_marginTop="10px"
+        android:textStyle="bold" android:text="Final Score: N/A"
+        android:textSize="22px" android:textColor="#808080" />
   </LinearLayout>
-
 </LinearLayout>
