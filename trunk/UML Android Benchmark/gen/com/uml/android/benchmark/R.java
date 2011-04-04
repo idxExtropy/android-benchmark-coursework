@@ -14,10 +14,21 @@ public final class R {
         public static final int icon=0x7f020000;
     }
     public static final class id {
+        public static final int cpu_compression=0x7f050002;
+        public static final int cpu_decoding=0x7f050003;
+        public static final int cpu_math=0x7f050001;
+        public static final int cpu_progress=0x7f050004;
         public static final int cpu_string=0x7f050000;
-        public static final int graphics_string=0x7f050003;
-        public static final int io_string=0x7f050002;
-        public static final int mem_string=0x7f050001;
+        public static final int graphics_progress=0x7f05000e;
+        public static final int graphics_string=0x7f05000d;
+        public static final int io_Reads=0x7f05000b;
+        public static final int io_progress=0x7f05000c;
+        public static final int io_string=0x7f050009;
+        public static final int io_write=0x7f05000a;
+        public static final int mem_progress=0x7f050008;
+        public static final int mem_read=0x7f050006;
+        public static final int mem_string=0x7f050005;
+        public static final int mem_write=0x7f050007;
     }
     public static final class layout {
         public static final int main=0x7f030000;

@@ -5,17 +5,18 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 public class UML_Android_Benchmark extends Activity {
 	private Handler mHandler = new Handler();
-	TextView strCPU; int cpuProgress;
-	TextView strMEM; int memProgress;
-	TextView strIO; int ioProgress;
-	TextView strGraphics; int graphicsProgress;
+	private TextView strCPU, strMEM, strIO, strGraphics;
+    private ProgressBar cpuProgress, memProgress, ioProgress, graphicsProgress;
+    private int stageProgress = 0;
 	
-	int testStage = 0;
-	boolean isTesting = false;
+	private int testStage = 0;
+	private boolean isTesting = false;
 	
 	//==============================================================================
     // Called when the activity is first created.
@@ -34,6 +35,11 @@ public class UML_Android_Benchmark extends Activity {
         mHandler.postDelayed(mUpdateTimeTask, 100);
         
         ShowSplashScreen();
+        
+        cpuProgress = (ProgressBar) findViewById(R.id.cpu_progress);
+        memProgress = (ProgressBar) findViewById(R.id.mem_progress);
+        ioProgress = (ProgressBar) findViewById(R.id.io_progress);
+        graphicsProgress = (ProgressBar) findViewById(R.id.graphics_progress);
     }
     
     //==============================================================================
@@ -62,10 +68,10 @@ public class UML_Android_Benchmark extends Activity {
     {
     	testStage = 0;
     	
-    	cpuProgress = 0;
-    	memProgress = 0;
-    	ioProgress = 0;
-    	graphicsProgress = 0;
+    	cpuProgress.setProgress(0);
+    	memProgress.setProgress(0);
+    	ioProgress.setProgress(0);
+    	graphicsProgress.setProgress(0);
     	
     	isTesting = true; 	
     }
@@ -78,45 +84,53 @@ public class UML_Android_Benchmark extends Activity {
 		   {
 			   if (testStage == 0)
 			   {
-				   strCPU.setText("CPU: " + cpuProgress + "%");
-				   cpuProgress += 4;
+				   strCPU.setText("CPU: N/A");
+				   cpuProgress.setProgress(stageProgress);
+				   stageProgress += 2;
 				   
-				   if (cpuProgress >= 100)
+				   if (stageProgress >= 100)
 				   {
-					   strCPU.setText("CPU: 100%");
+					   cpuProgress.setProgress(100);
+					   stageProgress = 0;
 					   testStage = 1;
 				   }
 			   }
 			   else if (testStage == 1)
 			   {
-				   strMEM.setText("MEM: " + memProgress + "%");
-				   memProgress += 3;
+				   strMEM.setText("MEM: N/A");
+				   memProgress.setProgress(stageProgress);
+				   stageProgress += 3;
 				   
-				   if (memProgress >= 100)
+				   if (stageProgress >= 100)
 				   {
-					   strMEM.setText("MEM: 100%");
+					   memProgress.setProgress(100);
+					   stageProgress = 0;
 					   testStage = 2;
 				   }
 			   }
 			   else if (testStage == 2)
 			   {
-				   strIO.setText("IO: " + ioProgress + "%");
-				   ioProgress += 2;
+				   strIO.setText("IO: N/A");
+				   ioProgress.setProgress(stageProgress);
+				   stageProgress += 2;
 				   
-				   if (ioProgress >= 100)
+				   if (stageProgress >= 100)
 				   {
-					   strIO.setText("IO: 100%");
+					   ioProgress.setProgress(100);
+					   stageProgress = 0;
 					   testStage = 3;
 				   }
 			   }
 			   else if (testStage == 3)
 			   {
-				   strGraphics.setText("Graphics: " + graphicsProgress + "%");
-				   graphicsProgress += 6;
+				   strGraphics.setText("Graphics: N/A");
+				   graphicsProgress.setProgress(stageProgress);
+				   stageProgress += 6;
 				   
-				   if (graphicsProgress >= 100)
+				   if (stageProgress >= 100)
 				   {
-					   strGraphics.setText("Graphics: 100%");
+					   graphicsProgress.setProgress(100);
+					   stageProgress = 0;
 					   isTesting = false;
 				   }
 			   }
