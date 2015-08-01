@@ -1,0 +1,1 @@
+Application to benchmark the CPU, Memory, IO, and graphics capabilities of supported Android devices.
